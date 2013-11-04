@@ -1,9 +1,27 @@
 @import 'src/main/less/reset.less';
 @import 'src/main/less/specs.less';
 
+body {
+  background-color: #f6f6f6;
+}
+
 #header {
-    background-color: #89bf04;
-    padding: 14px;
+    //background-color: #89bf04;
+    background-color: white;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #ccc;
+
+    padding: 27px;
+
+    .logo-esl-container {
+      padding: 0 20px 20px 20px;
+
+      .esl-logo {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
     a#logo {
         font-size: 1.5em;
         font-weight: bold;
