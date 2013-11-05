@@ -21,6 +21,7 @@ sourceFiles  = [
 task 'clean', 'Removes distribution', ->
   console.log 'Clearing dist...'
   exec 'rm -rf dist'
+  exec 'rm -rf src/main/webapp'
 
 task 'dist', 'Build a distribution', ->
   console.log "Build distribution in ./dist"
@@ -90,7 +91,11 @@ task 'dist', 'Build a distribution', ->
     exec 'cp -r node_modules/swagger-client/lib/swagger.js dist/lib'
     console.log '   : Copied swagger dependencies'
     exec 'cp -r src/main/html/* dist'
-    console.log '   : Copied html dependencies'
+    console.log '   : Copied html dependencies'    
+    console.log '   : Preparing for WAR...'
+    exec 'cp -r webapp src/main'
+    exec 'cp -r dist/* src/main/webapp'
+    console.log '   : Ready for packing WAR'
     console.log '   !'
 
 task 'spec', "Run the test suite", ->
