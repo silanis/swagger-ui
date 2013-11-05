@@ -16,6 +16,6 @@
     </dependency>
   </dependencies>
   <build>
-    <finalName>swagger-ui</finalName>
+    <finalName>api-docs</finalName>
   </build>
 </project>
